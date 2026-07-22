@@ -1,6 +1,7 @@
 import { Browser, Builder, By, Key, until } from 'selenium-webdriver';
 import { Select } from 'selenium-webdriver/lib/select.js'
 import { faker } from '@faker-js/faker';
+import { baseUrl } from "./utils/config.js";
 
 const driver = new Builder().forBrowser(Browser.CHROME).build();
 
@@ -20,14 +21,15 @@ const develeryLocation = 'Bhola';
 
 async function testRun(){
 
-    await driver.get("https://www.startech.com.bd");
+    await driver.get(baseUrl);
+
     await driver.manage().window().maximize();
-    await driver.sleep(2000);
+    await driver.sleep(300);
 
     //Make search operation
     await driver.findElement(By.xpath("//input[@placeholder='Search']")).click();
     await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(searchProduct);
-    await driver.sleep(3500);
+    await driver.sleep(2000);
 
    await driver.findElement(By.xpath("//div[@id='tab-prod']/div[@class='search-item'][1]")).click();
    
@@ -35,7 +37,7 @@ async function testRun(){
    await driver.findElement(By.id("input-quantity")).clear(); 
    await driver.findElement(By.id("input-quantity")).sendKeys(quantity);
    await driver.findElement(By.id("button-cart")).click();
-   await driver.sleep(3000);
+   await driver.sleep(1000);
 
    await driver.findElement(By.xpath("//div[@class='popup-inner']//div[@class='btn-wrap']//button[contains(text(),'View Cart')]")).click();
    await driver.findElement(By.xpath("//a[contains(text(),'Checkout')]")).click();
