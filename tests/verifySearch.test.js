@@ -6,8 +6,10 @@ import { driver } from "../utils/driver.js";
 const home = new HomePage(driver);
 const searchKeyword = productData.searchProductName;
 
-async function searchProductPage(){
+export async function verifySearchTest(){
+
     try{
+        await home.loadHomepage();
         await driver.findElement(By.xpath("//input[@placeholder='Search']")).click();
         await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(searchKeyword,Key.ENTER);
         let searchResults = await driver.findElements(By.xpath("//h4[@class='p-item-name']/a"));
@@ -34,11 +36,8 @@ async function searchProductPage(){
             }else{
                 console.log("No product Found");
             }
-    }finally{
-        await driver.quit();
+    console.log("Verify Search Test Complete")        
+    }catch (err){
+        console.error(err);
     }
-    
 }
-
-await home.loadHomepage();
-await searchProductPage();

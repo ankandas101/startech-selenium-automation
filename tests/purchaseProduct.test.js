@@ -7,7 +7,7 @@ const home = new HomePage(driver);
 const product = new SingleProductPage(driver);
 const checkout = new CheckoutPage(driver);
 
-async function testRun(){
+export async function purchaseProductTest(){
     try{
     await home.loadHomepage();
     await home.productSearch();
@@ -17,13 +17,15 @@ async function testRun(){
     await product.viewCart();
     await product.goToCheckout();
     await checkout.formFillup();
+    
+    
+    console.log("Verify purchaseProductTest Test Complete")        
 
+    }catch (err) {
+        console.error(err);
     }finally{
     await driver.sleep(2000);
-    await driver.quit();
     }
 
 
 }
-
-testRun();
