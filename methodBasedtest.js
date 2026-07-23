@@ -1,3 +1,5 @@
+// This is a method Based test homepage load to product buy in one file
+
 import { Browser, Builder, By, Key, until } from 'selenium-webdriver';
 import { Select } from 'selenium-webdriver/lib/select.js'
 import { faker } from '@faker-js/faker';
@@ -5,7 +7,7 @@ import { faker } from '@faker-js/faker';
 import { expect } from 'chai';
 const driver = new Builder().forBrowser(Browser.CHROME).build();
 
-const searchProductName = 'HP 15';
+const searchProductName = 'HP laptop';
 const quantity = 10;
 
 const randomFirstName = faker.person.firstName();
