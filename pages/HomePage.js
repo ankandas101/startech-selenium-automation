@@ -12,7 +12,7 @@ export default class HomePage {
         
         await this.driver.manage().window().maximize();
         await this.driver.get(baseUrl);
-        await this.driver.sleep(300);
+        await this.driver.sleep(500);
     }
         //Make search operation from homepage
     async productSearch(){

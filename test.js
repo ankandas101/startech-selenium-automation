@@ -12,15 +12,16 @@ async function runAllTests() {
    //await searchProductTest();
    //await purchaseProductTest();
    //await verifySearchTest();
-   //await loadHomepage();
+   await loadHomepage();
 
-    await doLogin();
+   // await doLogin();
 
 
     console.log("All Test Done")
     }catch (err) {
         console.error(err);
     } finally {
+        await driver.sleep(2000);
         await driver.quit();
         
     }
