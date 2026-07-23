@@ -5,9 +5,6 @@ import { productData } from "../test-data/productData.js";
 export default class HomePage {
     constructor(driver) {
         this.driver = driver;
-
-        this.searchBox = By.xpath("//input[@placeholder='Search']");
-        this.firstResult = By.xpath("//div[@id='tab-prod']/div[@class='search-item'][1]");
     }
 
     // function for loading homepage 
@@ -16,13 +13,13 @@ export default class HomePage {
         await this.driver.manage().window().maximize();
         await this.driver.sleep(300);
     }
-
-    //Make search operation from homepage
+        //Make search operation from homepage
     async productSearch(){
+        this.searchBox = By.xpath("//input[@placeholder='Search']");
+        this.firstResult = By.xpath("//div[@id='tab-prod']/div[@class='search-item'][1]");
         await this.driver.findElement(this.searchBox).click();
         await this.driver.findElement(this.searchBox).sendKeys(productData.searchProductName);
         await this.driver.sleep(2000);
         await this.driver.findElement(this.firstResult).click();
     }
-
 }

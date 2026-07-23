@@ -8,13 +8,21 @@ const product = new SingleProductPage(driver);
 const checkout = new CheckoutPage(driver);
 
 async function testRun(){
+    try{
     await home.loadHomepage();
-
     await home.productSearch();
 
     await product.setQuantityFromProductPage();
+    await product.addToCart();
+    await product.viewCart();
+    await product.goToCheckout();
+    await checkout.formFillup();
 
-    await checkout.fillForm();
+    }finally{
+    await driver.sleep(2000);
+    await driver.quit();
+    }
+
 
 }
 
