@@ -1,7 +1,8 @@
 import HomePage from "../pages/HomePage.js";
+import { driver } from "../utils/driver.js";
+
 import SingleProductPage from "../pages/SingleProductPage.js";
 import CheckoutPage from "../pages/CheckoutPage.js";
-import { driver } from "../utils/driver.js";
 
 const home = new HomePage(driver);
 const product = new SingleProductPage(driver);

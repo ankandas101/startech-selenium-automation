@@ -9,6 +9,7 @@ export const customerData = {
  randomAddress: faker.location.streetAddress(),
  randomAddressCity: faker.location.city(),
  develeryLocation: 'Bhola',
+ 
 payment_method: 'online',
 shipping_method: 'courier.express'
 }

@@ -9,8 +9,9 @@ export default class HomePage {
 
     // function for loading homepage 
     async loadHomepage(){
-        await this.driver.get(baseUrl);
+        
         await this.driver.manage().window().maximize();
+        await this.driver.get(baseUrl);
         await this.driver.sleep(300);
     }
         //Make search operation from homepage
@@ -21,5 +22,14 @@ export default class HomePage {
         await this.driver.findElement(this.searchBox).sendKeys(productData.searchProductName);
         await this.driver.sleep(2000);
         await this.driver.findElement(this.firstResult).click();
+        
+    }
+
+    async goToLoginPage(){
+        try{
+        await this.driver.findElement(By.xpath("//a[contains(text(),'Login')]")).click();
+        }catch(err){
+            console.error(err);
+        }
     }
 }
