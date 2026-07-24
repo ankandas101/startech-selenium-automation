@@ -5,19 +5,28 @@ import { searchProductTest } from "./tests/searchProduct.test.js";
 import { purchaseProductTest } from "./tests/purchaseProduct.test.js";
 import { verifySearchTest} from "./tests/verifySearch.test.js";
 import { doLogin } from "./tests/login.test.js";
+import { verifyOffers } from "./tests/verifyOfferPage.test.js";
+
+
+
+
 
 async function runAllTests() {
    try{
+console.log("Start Testing...");
+
+
+
 
    //await searchProductTest();
    //await purchaseProductTest();
    //await verifySearchTest();
-   await loadHomepage();
-
+   //await loadHomepage();
    // await doLogin();
+    await verifyOffers();
 
 
-    console.log("All Test Done")
+    console.log("...All Test Done")
     }catch (err) {
         console.error(err);
     } finally {
