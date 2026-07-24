@@ -8,7 +8,7 @@ const login = new Login(driver);
 
 export async function doLogin() {
    try{
-    await home.loadHomepage();
+  //  await home.loadHomepage();
     await home.goToLoginPage();
     await login.loginFormSubmit();
 

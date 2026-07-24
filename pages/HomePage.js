@@ -32,4 +32,15 @@ export default class HomePage {
             console.error(err);
         }
     }
+    async goToOfferPage() {
+        try {
+            const offerMenu = await this.driver.wait(
+                until.elementLocated(By.xpath("//a[.//h5[contains(text(),'Offers')]]")),
+                10000
+            );
+            await offerMenu.click();
+        } catch (error) {
+            console.error("Failed to go Offer Page:", error.message);
+        }
+    }
 }

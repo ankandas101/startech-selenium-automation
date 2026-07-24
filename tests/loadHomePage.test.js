@@ -3,7 +3,7 @@ import { driver } from "../utils/driver.js";
 
 const home = new HomePage(driver);
 
-export async function loadHomepage(){
+export async function loadHomepageTest(){
     try{
     await home.loadHomepage();    
     console.log("Verify Load Home page Test Complete") 

@@ -8,8 +8,8 @@ const offer = new OfferPage(driver);
 
 export async function verifyOffers(){
 
-    await home.loadHomepage();
-    await offer.goToOfferPage();
+   // await home.loadHomepage();
+    await home.goToOfferPage();
     await offer.verifyoffers();
 
 }

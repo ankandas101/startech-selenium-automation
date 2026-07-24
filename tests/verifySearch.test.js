@@ -9,7 +9,7 @@ const searchKeyword = productData.searchProductName;
 export async function verifySearchTest(){
 
     try{
-        await home.loadHomepage();
+       // await home.loadHomepage();
         await driver.findElement(By.xpath("//input[@placeholder='Search']")).click();
         await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(searchKeyword,Key.ENTER);
         let searchResults = await driver.findElements(By.xpath("//h4[@class='p-item-name']/a"));

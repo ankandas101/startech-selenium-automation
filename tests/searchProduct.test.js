@@ -5,7 +5,7 @@ const home = new HomePage(driver);
 
 export async function searchProductTest(){
     try{
-    await home.loadHomepage();
+    //await home.loadHomepage();
     await home.productSearch();
     
     console.log("Verify searchProduct Test Complete")        

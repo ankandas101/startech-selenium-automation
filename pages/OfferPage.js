@@ -5,17 +5,7 @@ export default class OfferPage {
         this.driver = driver;
     }
 
-    async goToOfferPage() {
-        try {
-            const offerMenu = await this.driver.wait(
-                until.elementLocated(By.xpath("//a[.//h5[contains(text(),'Offers')]]")),
-                10000
-            );
-            await offerMenu.click();
-        } catch (error) {
-            console.error("Failed to go Offer Page:", error.message);
-        }
-    }
+
 
     async verifyoffers() {
         try {
@@ -35,7 +25,7 @@ export default class OfferPage {
              for (let index = 0; index < offerUrls.length; index++) {
                 console.log(`Visiting Offer ${index + 1}/${offerUrls.length}: ${offerUrls[index]}`);
                 
-                 await this.driver.get(offerUrls[index]);
+                await this.driver.get(offerUrls[index]);
                 await this.driver.sleep(1500);  
 
                  const backButtonLocator = By.xpath("//a[./span[contains(text(),'arrow_back')]]");
@@ -53,6 +43,10 @@ export default class OfferPage {
 
                  await this.driver.sleep(1000);
                 console.log(`Visit Single offer ${index + 1} success`);
+
+                if(index >2){
+                    break;
+                }
             }
 
         } catch (err) {

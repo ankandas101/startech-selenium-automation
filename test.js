@@ -1,6 +1,6 @@
 import { driver } from "./utils/driver.js";
 
-import { loadHomepage } from "./tests/loadHomePage.test.js";
+import { loadHomepageTest } from "./tests/loadHomePage.test.js";
 import { searchProductTest } from "./tests/searchProduct.test.js";
 import { purchaseProductTest } from "./tests/purchaseProduct.test.js";
 import { verifySearchTest} from "./tests/verifySearch.test.js";
@@ -15,13 +15,11 @@ async function runAllTests() {
    try{
 console.log("Start Testing...");
 
-
-
-
-   //await searchProductTest();
+   await loadHomepageTest();
+   await searchProductTest();
    //await purchaseProductTest();
    //await verifySearchTest();
-   //await loadHomepage();
+   //
    // await doLogin();
     await verifyOffers();
 

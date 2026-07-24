@@ -10,7 +10,7 @@ const checkout = new CheckoutPage(driver);
 
 export async function purchaseProductTest(){
     try{
-    await home.loadHomepage();
+   // await home.loadHomepage();
     await home.productSearch();
 
     await product.setQuantityFromProductPage();
