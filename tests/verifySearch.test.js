@@ -9,7 +9,7 @@ const searchKeyword = productData.searchProductName;
 export async function verifySearchTest(){
 
     try{
-       // await home.loadHomepage();
+        await home.loadHomepage();
         await driver.findElement(By.xpath("//input[@placeholder='Search']")).click();
         await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(searchKeyword,Key.ENTER);
         let searchResults = await driver.findElements(By.xpath("//h4[@class='p-item-name']/a"));
@@ -31,7 +31,7 @@ export async function verifySearchTest(){
                 notmatchedCount++;
                 }
             }
-            console.log("Matched Count: " + matchedCount);
+            console.log("Keyword Matched to Title  Count:" + matchedCount);
             console.log("Not Matched: " + notmatchedCount);
             }else{
                 console.log("No product Found");

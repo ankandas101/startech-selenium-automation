@@ -10,16 +10,17 @@ const checkout = new CheckoutPage(driver);
 
 export async function purchaseProductTest(){
     try{
-   // await home.loadHomepage();
-    await home.productSearch();
+    console.log("Visiting Homepage");
+   await home.loadHomepage();
 
+   console.log("Search a product and visit single product page");
+   await home.productSearch();
+   console.log("Set product quantity");
     await product.setQuantityFromProductPage();
     await product.addToCart();
     await product.viewCart();
     await product.goToCheckout();
     await checkout.formFillup();
-    
-    
     console.log("Verify purchaseProductTest Test Complete")        
 
     }catch (err) {

@@ -17,11 +17,10 @@ console.log("Start Testing...");
 
    await loadHomepageTest();
    await searchProductTest();
-   //await purchaseProductTest();
-   //await verifySearchTest();
-   //
-   // await doLogin();
-    await verifyOffers();
+   await verifySearchTest();
+   await doLogin();
+   await verifyOffers();
+   await purchaseProductTest();
 
 
     console.log("...All Test Done")
