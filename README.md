@@ -1,16 +1,28 @@
-# StarTech Selenium Automation Practice Project
+# StarTech Website Test - Selenium Automation Practice Project
 
-A web automation project for practice built with **Selenium WebDriver** and **JavaScript (Node.js)** for automating user interactions on the Star Tech website.
+A web automation project for practice built with **Selenium WebDriver** and **JavaScript (Node.js)** for automating user interactions on the Star Tech website https://www.startech.com.bd .
 
-## Features
-
+## Features Tested
+- Homepage load
+- Offer Page
 - Product search automation
 - Login automation
 - Product navigation
-- Search product verify
+- Search product and verify
 - Add to Cart automation
-- Checkout 
+- Checkout
+- purchase a product
+- Category
+## Test Scenarios
 
+- Homepage loading
+- Offer Page Verify
+- Product Search
+- Product Details
+- Add to Cart
+- Purchase a product
+- Login
+  
 ## Tech Stack
 
 - JavaScript (Node.js)
@@ -70,14 +82,11 @@ node tests/searchProduct.test.js
 npm install selenium-webdriver
 ```
 
-## Test Scenarios
 
-- Homepage loading
-- Login
-- Product Search
-- Product Details
-- Add to Cart
 
 ## Author
 
 Ankan Das
+```bash
+https://ankandas.me
+```
